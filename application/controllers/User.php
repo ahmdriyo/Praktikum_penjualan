@@ -9,6 +9,7 @@ class User extends CI_Controller
     {
         parent::__construct();
         $this->load->model('User_Model');
+        $this->load->library('form_validation');
     }
 
     public function index()
@@ -27,5 +28,13 @@ class User extends CI_Controller
             'content' => 'user/add_from'
         );
         $this->load->view('template/main',$data);
+    }
+    public function save ()
+    {
+        $this->User_model->Save();
+        if($this->db->affected_rows()>0){
+            $this->session->set_flashdata("success","data berhasil di simpan");
+        }
+        redirect('user');
     }
 }

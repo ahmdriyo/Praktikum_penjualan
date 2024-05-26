@@ -14,9 +14,16 @@
           </div>
           <div class="mb-3">
             <label for="username">USERNAME <code>*</code></label>
+            <input class="form-control <?php echo form_error('username') ? 'is-invalid' : '' ?>" type="text"
+              name="username" placeholder="USERNAME" required />
+            <div class="invalid-feedback">
+            </div>
+          </div>
+          <!-- <div class="mb-3">
+            <label for="username">USERNAME <code>*</code></label>
             <input class="form-control" type="text" name="username" placeholder="USERNAME" required />
             
-          </div>
+          </div> -->
           <div class="mb-3">
             <label for="full_name">FULL NAME <code>*</code></label>
             <input class="form-control" type="text" name="full_name" placeholder="FULL NAME" required />

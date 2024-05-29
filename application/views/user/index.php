@@ -7,11 +7,11 @@
          </ol>
          <div class="card mb-4">
              <div class="card-header">
-                 <a href="<?php echo site_url('admin/user/add') ?>"><i class="fas fa-plus"></i>Add New</a>
+                 <a href="<?php echo site_url('/user/add') ?>"><i class="fas fa-plus"></i>Add New</a>
              </div>
              <?php if ($this->session->flashdata('success')) : ?>
                  <div class="alert alert-success" role="alert">
-                     <?php $this->session->flashdata('success') ?>
+                     <?php echo $this->session->flashdata('success') ?>
                  </div>
              <?php endif; ?>
              <div class="card-body">
@@ -40,8 +40,8 @@
                                      <td><?php echo $user->role; ?></td>
                                      <td>
                                          <div>
-                                             <a href="<?php echo base_url('admin/user/getedit/' . $user->id); ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
-                                             <a href="<?php echo base_url('admin/user/delete/' . $user->id); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Ingin menghapus data user ini?');">
+                                             <a href="<?php echo base_url('/user/getedit/' . $user->id); ?>" class="btn btn-sm btn-info"><i class="fas fa-edit"></i> Edit</a>
+                                             <a href="<?php echo base_url('/user/delete/' . $user->id); ?>" class="btn btn-sm btn-danger" onclick="return confirm('Ingin menghapus data user ini?');">
                                                  <i class="fas fa-trash"></i> Hapus
                                              </a>
                                          </div>
